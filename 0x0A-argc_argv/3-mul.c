@@ -9,7 +9,7 @@
  * arguments passed to the program
  *
  * Return: 0
- * errur : 1 
+ * errur : 1
  */
 int main(int argc, char *argv[])
 {
@@ -21,7 +21,6 @@ int main(int argc, char *argv[])
 		printf("%d\n", n1 * n2);
 		return (0);
 	}
-
 	else
 	{
 		printf("Error\n");
