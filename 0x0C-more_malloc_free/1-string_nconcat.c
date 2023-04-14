@@ -1,25 +1,50 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 
 /**
- * string_nconcat - conca two strings
- * @s1: pointer to first
- * @s2: pointer to 2nd 
- * @n: Number of bytes 
- * 
- * Return: pointer to space in memory
- *
+ * string_nconcat - concatenates two strings
+ * @s1: 1st string
+ * @s2: 2nd string
+ * @n: number of bytes
+ * Return: NULL if fail, otherwise pointer of char
  */
-char *string_nconcat(char *s1, char *S2, unsigned int n)
+
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *str;
-	unsigned int i, j, s1_length, s2_length;
+	char *s3;
+	unsigned int slen1 = 0, slen2 = 0, i, j;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	for(s1_length = 0; s1[s1_length] != '\0'; s1_lentgh++)
 
+	while (s1[slen1] != 0)
+	{
+		slen1++;
+	}
 
+	while (s2[slen2] != 0)
+	{
+		slen2++;
+	}
+
+	if (n >= slen2)
+		n = slen2;
+	s3 = malloc(sizeof(char) * slen1 + n + 1);
+
+	if (s3 == NULL)
+		return (NULL);
+
+	for (i = 0; s1[i] != 0; i++)
+	{
+		s3[i] = s1[i];
+	}
+	for (j = 0; j < n; j++)
+	{
+		s3[j + i] = s2[j];
+	}
+	s3[j + i] = 0;
+	return (s3);
 }
