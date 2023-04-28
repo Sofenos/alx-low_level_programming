@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * first - function executed 
+ * first - function executed
  * Return: return ntg
  */
 
